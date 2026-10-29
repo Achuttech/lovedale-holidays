@@ -3,6 +3,13 @@
    The Wikimedia URLs below are used only by download_images.sh to fetch the photos. */
 const C = "https://commons.wikimedia.org/wiki/Special:FilePath/";
 window.IMAGES = {
+  p_backwaters: { file: "hero-backwaters.png", alt: "Houseboat on the Kerala backwaters", url: "" },
+  p_food: { file: "food.png", alt: "Traditional Kerala cuisine", url: "" },
+  p_hotel_beach: { file: "hotel-beach.png", alt: "Beachfront resort in Kerala", url: "" },
+  p_hotel_heritage: { file: "hotel-heritage.png", alt: "Heritage hotel in Kerala", url: "" },
+  p_hotel_hill: { file: "hotel-hill.png", alt: "Hill-view stay in Munnar", url: "" },
+  p_hotel_resort: { file: "hotel-resort.png", alt: "Luxury resort with pool", url: "" },
+  p_houseboat_in: { file: "houseboat-interior.png", alt: "Inside a luxury houseboat", url: "" },
   e_kathakali2: { alt: "Kathakali artist applying traditional makeup", url: C + "Kathakali_makeup.jpg?width=900" },
   e_kathakali3: { alt: "Kathakali performance on stage", url: C + "Kathakali_performance.jpg?width=900" },
   e_ayurveda2: { alt: "Ayurvedic oil treatment (Shirodhara)", url: C + "Shirodhara.jpg?width=900" },
@@ -28,18 +35,18 @@ window.IMAGES = {
   hero1:    { alt: "Houseboat on the Kerala backwaters",   url: C + "Kerala_backwaters,_Houseboats,_India.jpg?width=1600" },
   hero2:    { alt: "Munnar tea plantations",               url: C + "Munnar_tea_plantation_from_the_top.jpg?width=1600" },
   hero3:    { alt: "Athirappilly waterfalls",              url: C + "Athirappilly_waterfalls.jpg?width=1600" },
-  alleppey: { alt: "Vembanad lake, Alappuzha",             url: C + "VembanadAlappuzha.jpg?width=900" },
-  munnar:   { alt: "Tea plantation in Munnar",             url: C + "Tea_plantation_in_Munnar.jpg?width=900" },
-  thekkady: { alt: "Periyar lake, Thekkady",               url: C + "Thekkady_Lake_1.JPG?width=900" },
-  kochi:    { alt: "Chinese fishing nets, Fort Kochi",     url: C + "Kochi,_Chinese_fishing_nets,_Kerala,_India.jpg?width=900" },
-  kovalam:  { alt: "Kovalam lighthouse beach",             url: C + "Kovalam_lighthouse.JPG?width=1600" },
-  varkala:  { alt: "Varkala cliff beach",                  url: C + "Beach_of_Varkala.jpg?width=900" },
-  wayanad:  { alt: "Chembra peak, Wayanad",                url: C + "Chembra_Peak.JPG?width=900" },
+  alleppey: { file: "alleppey.png", alt: "Vembanad lake, Alappuzha",             url: C + "VembanadAlappuzha.jpg?width=900" },
+  munnar:   { file: "munnar.png", alt: "Tea plantation in Munnar",             url: C + "Tea_plantation_in_Munnar.jpg?width=900" },
+  thekkady: { file: "thekkady.png", alt: "Periyar lake, Thekkady",               url: C + "Thekkady_Lake_1.JPG?width=900" },
+  kochi:    { file: "kochi.png", alt: "Chinese fishing nets, Fort Kochi",     url: C + "Kochi,_Chinese_fishing_nets,_Kerala,_India.jpg?width=900" },
+  kovalam:  { file: "kovalam.png", alt: "Kovalam lighthouse beach",             url: C + "Kovalam_lighthouse.JPG?width=1600" },
+  varkala:  { file: "varkala.png", alt: "Varkala cliff beach",                  url: C + "Beach_of_Varkala.jpg?width=900" },
+  wayanad:  { file: "wayanad.png", alt: "Chembra peak, Wayanad",                url: C + "Chembra_Peak.JPG?width=900" },
   vagamon:  { alt: "Vagamon meadows",                      url: C + "Vagamon_Meadow_1.jpg?width=900" },
   kumarakom:{ alt: "Kumarakom backwaters",                 url: C + "Cheepunkal,_Kavanattinkara,_Kumarakom,_Kerala,_India_-_panoramio_(3).jpg?width=900" },
-  kathakali:{ alt: "Kathakali performer",                  url: C + "Kathakali_dance_01.jpg?width=900" },
+  kathakali:{ file: "kathakali.png", alt: "Kathakali performer",                  url: C + "Kathakali_dance_01.jpg?width=900" },
   elephant: { alt: "Thrissur Pooram elephants",            url: C + "Thrissur_Pooram_1.jpg?width=900" },
-  ayurveda: { alt: "Ayurvedic head massage",               url: C + "Head_massage.jpg?width=900" },
+  ayurveda: { file: "ayurveda.png", alt: "Ayurvedic head massage",               url: C + "Head_massage.jpg?width=900" },
   spices:   { alt: "Spices in an Indian market",           url: C + "Spices_in_an_Indian_market.jpg?width=900" },
   sadya:    { alt: "Kerala Onam sadya feast",              url: C + "Onam_Sadya_(20776959430).jpg?width=900" },
   vallamkali:{alt: "Nehru Trophy snake boat race",         url: C + "Nehru_Trophy_Boat_Race_Kerala.jpg?width=900" },
@@ -98,7 +105,7 @@ window.IMAGES = {
 
 window.imgTag = function (slug, cls = "") {
   const i = window.IMAGES[slug];
-  return `<img class="${cls}" loading="lazy" alt="${i.alt}" data-slug="${slug}" src="assets/images/${slug}.jpg">`;
+  return `<img class="${cls}" loading="lazy" alt="${i.alt}" data-slug="${slug}" src="assets/images/${i.file || slug + ".jpg"}">`;
 };
 window.wireImages = function (root = document) {
   root.querySelectorAll("img[data-slug]").forEach(img => {

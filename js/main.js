@@ -16,7 +16,7 @@ const DESTINATIONS = [
 ];
 const PACKAGES = window.PACKAGES;
 const FILTERS = ["all", "backwaters", "hills", "beaches", "wildlife", "culture", "wellness", "honeymoon", "family"];
-const GALLERY = ["g_houseboat2","g_mist","g_hills","g_fortkochi","g_varkala","g_kovalam","g_paddy","g_theyyam","g_mohini","g_topstation","g_illikkal","g_marari","g_kurinji","g_palms","g_ramakkal","g_parunthu","g_kalari","g_meenmutty","g_alappuzha","g_teagarden","alleppey","munnar2","falls2","kathakali","elephant","spices","sadya","vallamkali","canoe","beach2","hill2","munnar","kochi","kumarakom"];
+const GALLERY = ["p_backwaters","p_houseboat_in","alleppey","munnar","kovalam","varkala","wayanad","thekkady","kochi","kathakali","ayurveda","p_food","p_hotel_resort","p_hotel_beach","p_hotel_heritage","p_hotel_hill","g_houseboat2","g_mist","g_hills","g_fortkochi","g_varkala","g_kovalam","g_paddy","g_theyyam","g_mohini","g_topstation","g_illikkal","g_marari","g_kurinji","g_palms","g_ramakkal","g_parunthu","g_kalari","g_meenmutty","g_alappuzha","g_teagarden","munnar2","falls2","elephant","spices","sadya","vallamkali","canoe","beach2","hill2","kumarakom"];
 const EXPERIENCES = [
   ["kathakali", "Kathakali & Culture", "Classical dance-drama with vivid costumes"],
   ["ayurveda", "Ayurveda", "Authentic therapies in peaceful settings"],
@@ -35,7 +35,7 @@ const REVIEWS = [
 const inr = n => "₹" + n.toLocaleString("en-IN");
 const waLink = msg => `https://wa.me/${S.whatsapp}?text=${encodeURIComponent(msg)}`;
 
-$("#heroSlides").innerHTML = ["hero1","hero2","hero3","kovalam","h_vembanad","h_munnar_tea","h_kochi_nets","h_varkala","h_munnar_mist","h_topstation","h_cherai","h_houseboat","h_marari","h_vagamon"].map((s,i)=>`<div class="slide ${i?"":"on"}">${imgTag(s)}</div>`).join("");
+$("#heroSlides").innerHTML = ["p_backwaters","munnar","kovalam","alleppey","varkala","wayanad","thekkady","kochi","h_vembanad","h_munnar_tea","h_marari","h_topstation","hero2","hero3"].map((s,i)=>`<div class="slide ${i?"":"on"}">${imgTag(s)}</div>`).join("");
 
 $("#destGrid").innerHTML = DESTINATIONS.map(([s,n,d],i)=>`
   <a class="dest reveal" href="destination.html?id=${s}" style="--d:${i*60}ms" aria-label="Explore ${n}">${imgTag(s)}<div class="cap"><h3>${n}</h3><p>${d}</p><span class="more">Explore &rarr;</span></div></a>`).join("");
@@ -75,7 +75,7 @@ wireImages();
 const lb = $("#lightbox");
 let lbIndex = 0;
 function openLb(i) { lbIndex = (i + GALLERY.length) % GALLERY.length; const im = IMAGES[GALLERY[lbIndex]];
-  const el = $("img", lb); el.src = `assets/images/${GALLERY[lbIndex]}.jpg`;
+  const el = $("img", lb); el.src = `assets/images/${im.file || GALLERY[lbIndex] + ".jpg"}`;
   $("#lbCap").textContent = im.alt; lb.classList.add("open"); }
 $("#galleryGrid").addEventListener("click", e => { const b = e.target.closest(".gi"); if (b) openLb(GALLERY.indexOf(b.dataset.slug)); });
 $("#lbNext").onclick = () => openLb(lbIndex + 1); $("#lbPrev").onclick = () => openLb(lbIndex - 1);

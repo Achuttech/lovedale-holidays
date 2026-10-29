@@ -46,6 +46,7 @@ Updating the site later: edit, then `git add . && git commit -m "update" && git 
 
 | Commit | Summary | What changed on the website |
 |---|---|---|
+| _next_ | New HD photos | Added 16 new HD photos. The home page slideshow now opens with backwaters, Munnar, Kovalam, Alleppey and other new photos; the gallery now starts with houseboat, destination, food and hotel photos; destination and experience cards also show the new photos. |
 | _next_ | Signature Experience pages | All 6 Signature Experiences are now clickable, each with its own page: banner photo, 5 detailed paragraphs, highlights, quick facts, a photo gallery and a WhatsApp booking button. |
 | _next_ | Photos stored locally | All site photos now load from the website's own `assets/images/` folder (fetched once with `download_images.sh`), and the Wikimedia fallback has been removed. |
 | _next_ | More landing page photos | Added 10 more HD Kerala photos to the home page slideshow (14 in total). |
