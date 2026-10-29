@@ -44,13 +44,13 @@
   const hero = document.getElementById("pHero");
   hero.insertAdjacentHTML("afterbegin", imgTag(p.img, "pkg-hero-img")); wireImages(hero);
   pTitle.textContent = p.title;
-  pMeta.textContent = `${p.days} Nights / ${p.days+1} Days \u00b7 ${p.route}`;
+  pMeta.textContent = `${p.days ? `${p.days} Nights / ${p.days+1} Days` : "Day trip"} \u00b7 ${p.route}`;
   pIntro.textContent = p.intro;
   pPrice.textContent = inr(p.price);
   pPlan.innerHTML = p.plan.map(([t,d],i)=>`<li><span class="day">Day ${i+1}</span><h3>${t}</h3><p>${d}</p></li>`).join("");
-  pInc.innerHTML = p.inc.concat(["Hotel accommodation","All transfers & sightseeing by private car","Driver allowance, tolls & parking"]).map(x=>`<li>${x}</li>`).join("");
+  pInc.innerHTML = p.inc.concat(p.days ? ["Hotel accommodation","All transfers & sightseeing by private car","Driver allowance, tolls & parking"] : []).map(x=>`<li>${x}</li>`).join("");
   pExc.innerHTML = p.exc.map(x=>`<li>${x}</li>`).join("");
-  pWa.href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi, I would like to book the "${p.title}" package (${p.days}N/${p.days+1}D). Please share availability and price.`)}`;
+  pWa.href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi, I would like to book the "${p.title}" package (${p.days ? p.days+"N/"+(p.days+1)+"D" : "day trip"}). Please share availability and price.`)}`;
 })();
 </script>
 </body>

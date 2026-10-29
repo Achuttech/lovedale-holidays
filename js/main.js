@@ -15,7 +15,7 @@ const DESTINATIONS = [
   ["fort", "Bekal", "A seaside fort in northern Kerala", "culture"]
 ];
 const PACKAGES = window.PACKAGES;
-const FILTERS = ["all", "backwaters", "hills", "beaches", "wildlife", "culture", "wellness"];
+const FILTERS = ["all", "backwaters", "hills", "beaches", "wildlife", "culture", "wellness", "honeymoon", "family"];
 const GALLERY = ["alleppey","munnar2","falls2","kathakali","elephant","spices","sadya","vallamkali","canoe","beach2","hill2","munnar","kochi","kumarakom"];
 const EXPERIENCES = [
   ["kathakali", "Kathakali & Culture", "Classical dance-drama with vivid costumes"],
@@ -43,7 +43,7 @@ $("#destGrid").innerHTML = DESTINATIONS.map(([s,n,d],i)=>`
 function renderPackages(f = "all") {
   $("#pkgGrid").innerHTML = PACKAGES.filter(p => f === "all" || p.cat === f).map(p => `
   <article class="pkg">
-    <div class="pimg">${imgTag(p.img)}<span class="badge">${p.days}N / ${p.days+1}D</span></div>
+    <div class="pimg">${imgTag(p.img)}<span class="badge">${p.days ? `${p.days}N / ${p.days+1}D` : "Day trip"}</span></div>
     <div class="pbody"><h3>${p.title}</h3><p class="route">${p.route}</p>
       <ul>${p.inc.map(x=>`<li>${x}</li>`).join("")}</ul>
       <div class="pfoot"><div><small>from</small><strong>${inr(p.price)}</strong><small> /person</small></div>
