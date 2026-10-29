@@ -191,3 +191,6 @@ blockquote footer{margin-top:12px;font-weight:700;color:var(--red)}
 .pkg-side .btn{text-align:center}
 .pkg-side .note{font-size:.85rem;color:#666}
 @media (max-width:860px){.pkg-detail{grid-template-columns:1fr}.pkg-side{position:static}}
+
+.hours-note{background:#fff6d6;border-left:4px solid #ffd23f;padding:10px 14px;border-radius:8px;color:#333}
+.site-footer .hours{font-weight:600}

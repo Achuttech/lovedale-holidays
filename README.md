@@ -2,7 +2,7 @@
 
 Static Kerala tourism website (HTML / CSS / JS). No build step.
 
-## Change phone / WhatsApp / email
+## Change phone / WhatsApp / business hours
 Edit **one file only**: `js/site-config.js`
 Current number: **+91 90729 55363**. Header, footer, contact page, call links
 and the floating WhatsApp button all read from it.

@@ -16,7 +16,7 @@ const DESTINATIONS = [
 ];
 const PACKAGES = window.PACKAGES;
 const FILTERS = ["all", "backwaters", "hills", "beaches", "wildlife", "culture", "wellness", "honeymoon", "family"];
-const GALLERY = ["alleppey","munnar2","falls2","kathakali","elephant","spices","sadya","vallamkali","canoe","beach2","hill2","munnar","kochi","kumarakom"];
+const GALLERY = ["g_houseboat2","g_mist","g_hills","g_fortkochi","g_varkala","g_kovalam","g_paddy","g_theyyam","g_mohini","g_topstation","g_illikkal","g_marari","g_kurinji","g_palms","g_ramakkal","g_parunthu","g_kalari","g_meenmutty","g_alappuzha","g_teagarden","alleppey","munnar2","falls2","kathakali","elephant","spices","sadya","vallamkali","canoe","beach2","hill2","munnar","kochi","kumarakom"];
 const EXPERIENCES = [
   ["kathakali", "Kathakali & Culture", "Classical dance-drama with vivid costumes"],
   ["ayurveda", "Ayurveda", "Authentic therapies in peaceful settings"],
@@ -35,7 +35,7 @@ const REVIEWS = [
 const inr = n => "₹" + n.toLocaleString("en-IN");
 const waLink = msg => `https://wa.me/${S.whatsapp}?text=${encodeURIComponent(msg)}`;
 
-$("#heroSlides").innerHTML = ["hero1","hero2","hero3","kovalam"].map((s,i)=>`<div class="slide ${i?"":"on"}">${imgTag(s)}</div>`).join("");
+$("#heroSlides").innerHTML = ["hero1","hero2","g_mist","hero3","g_varkala","kovalam","g_houseboat2"].map((s,i)=>`<div class="slide ${i?"":"on"}">${imgTag(s)}</div>`).join("");
 
 $("#destGrid").innerHTML = DESTINATIONS.map(([s,n,d],i)=>`
   <article class="dest reveal" style="--d:${i*60}ms">${imgTag(s)}<div class="cap"><h3>${n}</h3><p>${d}</p></div></article>`).join("");

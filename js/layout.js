@@ -9,7 +9,7 @@
   document.body.insertAdjacentHTML("afterbegin", `
   <header class="site-header" id="top">
     <div class="topbar"><div class="wrap">
-      <span>Kerala tours, backwaters, hill stations &amp; beaches</span>
+      <span>Call or WhatsApp: ${S.hours}</span>
       <a href="tel:${S.phoneTel}">&#9742; ${S.phoneDisplay}</a>
     </div></div>
     <nav class="wrap nav">
@@ -37,7 +37,7 @@
       <div><h4>Contact</h4>
         <a href="tel:${S.phoneTel}">${S.phoneDisplay}</a>
         <a href="${wa}" target="_blank" rel="noopener">WhatsApp us</a>
-        <a href="mailto:${S.email}">${S.email}</a><span>${S.address}</span></div>
+        <span class="hours">&#128339; ${S.hours}</span><span>Please call or chat on WhatsApp during business hours.</span><span>${S.address}</span></div>
     </div>
     <div class="copy">&copy; <span id="yr"></span> ${S.name} &middot; ${S.domain}</div>
   </footer>
@@ -48,7 +48,7 @@
   document.getElementById("yr").textContent = new Date().getFullYear();
   document.querySelectorAll("[data-phone]").forEach(a => { a.href = "tel:" + S.phoneTel; a.textContent = a.dataset.phone === "text" ? S.phoneDisplay : a.textContent; });
   document.querySelectorAll("[data-wa]").forEach(a => { a.href = wa; a.target = "_blank"; a.rel = "noopener"; });
-  document.querySelectorAll("[data-email]").forEach(a => { a.href = "mailto:" + S.email; a.textContent = S.email; });
+  document.querySelectorAll("[data-hours]").forEach(el => { el.innerHTML = `&#128339; Please call or chat with us during business hours: <b>${S.hours}</b>`; });
 
   const burger = document.querySelector(".burger"), links = document.querySelector(".links");
   burger.addEventListener("click", () => { const o = links.classList.toggle("open"); burger.setAttribute("aria-expanded", o); });
