@@ -14,16 +14,7 @@ const DESTINATIONS = [
   ["kumarakom", "Kumarakom", "Bird sanctuary and quiet lake resorts", "backwaters"],
   ["fort", "Bekal", "A seaside fort in northern Kerala", "culture"]
 ];
-const PACKAGES = [
-  { img: "hero1", title: "Kerala Backwaters Escape", days: 3, price: 12999, cat: "backwaters", route: "Kochi - Alleppey - Kumarakom", inc: ["Houseboat night", "Breakfast & dinner", "Private cab"] },
-  { img: "munnar", title: "Munnar Hill Retreat", days: 3, price: 9999, cat: "hills", route: "Kochi - Munnar - Kochi", inc: ["Tea estate visit", "Hotel stay", "Sightseeing"] },
-  { img: "thekkady", title: "Thekkady Wildlife & Spice", days: 3, price: 10999, cat: "wildlife", route: "Munnar - Thekkady", inc: ["Periyar boating", "Spice plantation", "Cultural show"] },
-  { img: "kovalam", title: "Beach & Backwater Combo", days: 5, price: 18999, cat: "beaches", route: "Trivandrum - Kovalam - Alleppey", inc: ["Beach resort", "Houseboat", "Airport transfers"] },
-  { img: "kochi", title: "Kerala Classic", days: 6, price: 24999, cat: "culture", route: "Kochi - Munnar - Thekkady - Alleppey", inc: ["4 destinations", "Houseboat", "Kathakali show"] },
-  { img: "wayanad", title: "Wayanad Nature Break", days: 4, price: 14999, cat: "hills", route: "Calicut - Wayanad", inc: ["Forest resort", "Waterfalls trek", "Pickup & drop"] },
-  { img: "ayurveda", title: "Ayurveda Wellness Holiday", days: 7, price: 32999, cat: "wellness", route: "Kovalam / Kochi", inc: ["Daily treatments", "Yoga", "Satvik meals"] },
-  { img: "varkala", title: "Varkala & Kovalam Beaches", days: 4, price: 13999, cat: "beaches", route: "Trivandrum - Varkala - Kovalam", inc: ["Cliff resort", "Sunset cruise", "Transfers"] }
-];
+const PACKAGES = window.PACKAGES;
 const FILTERS = ["all", "backwaters", "hills", "beaches", "wildlife", "culture", "wellness"];
 const GALLERY = ["alleppey","munnar2","falls2","kathakali","elephant","spices","sadya","vallamkali","canoe","beach2","hill2","munnar","kochi","kumarakom"];
 const EXPERIENCES = [
@@ -56,7 +47,8 @@ function renderPackages(f = "all") {
     <div class="pbody"><h3>${p.title}</h3><p class="route">${p.route}</p>
       <ul>${p.inc.map(x=>`<li>${x}</li>`).join("")}</ul>
       <div class="pfoot"><div><small>from</small><strong>${inr(p.price)}</strong><small> /person</small></div>
-        <a class="btn btn-sm" target="_blank" rel="noopener" href="${waLink(`Hi, I am interested in the "${p.title}" package. Please share details.`)}">Enquire</a></div></div>
+        <a class="btn btn-sm" target="_blank" rel="noopener" href="${waLink(`Hi, I am interested in the "${p.title}" package. Please share details.`)}">Enquire</a></div>
+      <a class="btn btn-details" href="package.html?id=${p.id}">View Details &amp; Tour Plan &rarr;</a></div>
   </article>`).join("");
   wireImages($("#pkgGrid"));
 }

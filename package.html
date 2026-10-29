@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tour Package | Lovedale Holidays</title>
+<link rel="icon" href="assets/logo.jpeg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inner">
+<section class="pkg-hero" id="pHero">
+  <div class="hero-shade"></div>
+  <div class="wrap pkg-hero-copy">
+    <a class="back" href="index.html#packages">&larr; All packages</a>
+    <h1 id="pTitle">Tour package</h1>
+    <p id="pMeta"></p>
+  </div>
+</section>
+<section class="section wrap pkg-detail">
+  <div>
+    <p class="lead-dark" id="pIntro"></p>
+    <h2 class="title left">Day-by-day <span class="red">plan</span></h2>
+    <ol class="timeline" id="pPlan"></ol>
+  </div>
+  <aside class="card pkg-side">
+    <p class="price"><small>from</small> <strong id="pPrice"></strong> <small>/person</small></p>
+    <h3>Included</h3><ul class="tick" id="pInc"></ul>
+    <h3>Not included</h3><ul class="cross" id="pExc"></ul>
+    <a class="btn" id="pWa" target="_blank" rel="noopener" href="#">Book on WhatsApp</a>
+    <a class="btn btn-ghost-dark" data-phone href="#">Call Now</a>
+    <p class="note">Every package can be customised: dates, hotels and number of days.</p>
+  </aside>
+</section>
+<script src="js/site-config.js"></script>
+<script src="js/images.js"></script>
+<script src="js/packages.js"></script>
+<script src="js/layout.js"></script>
+<script>
+(function(){
+  const id = new URLSearchParams(location.search).get("id");
+  const p = PACKAGES.find(x => x.id === id) || PACKAGES[0];
+  const inr = n => "\u20b9" + n.toLocaleString("en-IN");
+  document.title = p.title + " | Lovedale Holidays";
+  const hero = document.getElementById("pHero");
+  hero.insertAdjacentHTML("afterbegin", imgTag(p.img, "pkg-hero-img")); wireImages(hero);
+  pTitle.textContent = p.title;
+  pMeta.textContent = `${p.days} Nights / ${p.days+1} Days \u00b7 ${p.route}`;
+  pIntro.textContent = p.intro;
+  pPrice.textContent = inr(p.price);
+  pPlan.innerHTML = p.plan.map(([t,d],i)=>`<li><span class="day">Day ${i+1}</span><h3>${t}</h3><p>${d}</p></li>`).join("");
+  pInc.innerHTML = p.inc.concat(["Hotel accommodation","All transfers & sightseeing by private car","Driver allowance, tolls & parking"]).map(x=>`<li>${x}</li>`).join("");
+  pExc.innerHTML = p.exc.map(x=>`<li>${x}</li>`).join("");
+  pWa.href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi, I would like to book the "${p.title}" package (${p.days}N/${p.days+1}D). Please share availability and price.`)}`;
+})();
+</script>
+</body>
+</html>

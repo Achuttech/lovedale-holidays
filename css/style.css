@@ -163,3 +163,31 @@ blockquote footer{margin-top:12px;font-weight:700;color:var(--red)}
   .plan,.contact-grid,.site-footer .grid{grid-template-columns:1fr}
   .topbar span{display:none}
 }
+
+/* ---------- Package details button + page ---------- */
+.btn-details{display:block;text-align:center;margin-top:14px;background:transparent;color:#c8102e;border:2px solid #c8102e;padding:10px 14px;font-size:.92rem}
+.btn-details:hover{background:#c8102e;color:#fff}
+.pkg-hero{position:relative;min-height:62vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:linear-gradient(135deg,#0b5d3b,#c8102e)}
+.pkg-hero .pkg-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pkg-hero .hero-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+.pkg-hero-copy{position:relative;padding:120px 20px 40px}
+.pkg-hero-copy h1{font-size:clamp(2rem,5vw,3.4rem);margin:.3em 0}
+.pkg-hero-copy .back{color:#ffd23f;text-decoration:none;font-weight:600}
+.pkg-detail{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start}
+.lead-dark{font-size:1.15rem;line-height:1.7;color:#333}
+.timeline{list-style:none;padding:0;margin:20px 0;border-left:3px solid #ffd23f}
+.timeline li{position:relative;padding:0 0 26px 28px}
+.timeline li::before{content:"";position:absolute;left:-10px;top:4px;width:17px;height:17px;border-radius:50%;background:#c8102e;border:3px solid #fff;box-shadow:0 0 0 2px #c8102e}
+.timeline .day{display:inline-block;background:#0b5d3b;color:#fff;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.05em}
+.timeline h3{margin:8px 0 4px}
+.timeline p{margin:0;color:#555;line-height:1.6}
+.pkg-side{position:sticky;top:100px;display:flex;flex-direction:column;gap:10px}
+.pkg-side .price strong{font-size:2rem;color:#c8102e}
+.pkg-side h3{margin:10px 0 0;font-size:1rem}
+.pkg-side ul{margin:0;padding:0;list-style:none}
+.pkg-side li{padding:4px 0 4px 24px;position:relative}
+.tick li::before{content:"\2713";position:absolute;left:0;color:#0b5d3b;font-weight:700}
+.cross li::before{content:"\2715";position:absolute;left:0;color:#c8102e}
+.pkg-side .btn{text-align:center}
+.pkg-side .note{font-size:.85rem;color:#666}
+@media (max-width:860px){.pkg-detail{grid-template-columns:1fr}.pkg-side{position:static}}
