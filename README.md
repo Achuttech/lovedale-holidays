@@ -46,10 +46,15 @@ Updating the site later: edit, then `git add . && git commit -m "update" && git 
 
 | Commit | Summary | What changed on the website |
 |---|---|---|
+| _next_ | Signature Experience pages | All 6 Signature Experiences are now clickable, each with its own page: banner photo, 5 detailed paragraphs, highlights, quick facts, a photo gallery and a WhatsApp booking button. |
+| _next_ | Photos stored locally | All site photos now load from the website's own `assets/images/` folder (fetched once with `download_images.sh`), and the Wikimedia fallback has been removed. |
+| _next_ | More landing page photos | Added 10 more HD Kerala photos to the home page slideshow (14 in total). |
+| _next_ | Hero shade + new address | Added a soft dark shade on the left side of the home page photos so the headline is easier to read. Office address updated to MG Road, Ernakulam, Kerala, India. |
 | `0aeee85` | Site-wide refresh | Updated look and layout across all pages, refreshed header/footer, contact details and contact page, improved photos, and polished the tour package pages. |
 | `b14557f` | Tour package improvements | Improved the tour package detail pages: better package information and how packages are shown on the site. |
 | `abb92b5` | Fixed photos + new package pages | Fixed broken/missing Kerala photos on the home page, and added new tour package detail pages so visitors can view each package in full. |
 | `d219790` | Website launch | First version of the Lovedale Holidays site: home page, contact page, logo, call/WhatsApp buttons, and the lovedale.co.in domain setup. |
 
+Rows marked _next_ are not yet committed; replace with the commit ID after pushing.
 For future updates, add a new row at the top, and use a clear commit message,
 for example `git commit -m "Add Munnar package"`.
