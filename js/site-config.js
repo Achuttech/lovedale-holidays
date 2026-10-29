@@ -5,8 +5,10 @@ window.SITE = {
   domain: "lovedale.co.in",
   phoneDisplay: "+91 90729 55363",
   phoneTel: "+919072955363",        // used in tel: links
+  phone2Display: "+91 79075 14143",   // secondary mobile
+  phone2Tel: "+917907514143",
   whatsapp: "919072955363",          // used in wa.me links (digits only)
   hours: "Mon - Sun, 9:00 AM - 8:00 PM (IST)",   // business hours shown on the site
-  address: "Kerala, India",          // change to your office address
+  address: "MG Road, Ernakulam, Kerala, India",          // change to your office address
   whatsappMessage: "Hi Lovedale Holidays, I would like to know more about Kerala tour packages."
 };

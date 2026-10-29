@@ -35,10 +35,10 @@ const REVIEWS = [
 const inr = n => "₹" + n.toLocaleString("en-IN");
 const waLink = msg => `https://wa.me/${S.whatsapp}?text=${encodeURIComponent(msg)}`;
 
-$("#heroSlides").innerHTML = ["hero1","hero2","g_mist","hero3","g_varkala","kovalam","g_houseboat2"].map((s,i)=>`<div class="slide ${i?"":"on"}">${imgTag(s)}</div>`).join("");
+$("#heroSlides").innerHTML = ["hero1","hero2","hero3","kovalam","h_vembanad","h_munnar_tea","h_kochi_nets","h_varkala","h_munnar_mist","h_topstation","h_cherai","h_houseboat","h_marari","h_vagamon"].map((s,i)=>`<div class="slide ${i?"":"on"}">${imgTag(s)}</div>`).join("");
 
 $("#destGrid").innerHTML = DESTINATIONS.map(([s,n,d],i)=>`
-  <article class="dest reveal" style="--d:${i*60}ms">${imgTag(s)}<div class="cap"><h3>${n}</h3><p>${d}</p></div></article>`).join("");
+  <a class="dest reveal" href="destination.html?id=${s}" style="--d:${i*60}ms" aria-label="Explore ${n}">${imgTag(s)}<div class="cap"><h3>${n}</h3><p>${d}</p><span class="more">Explore &rarr;</span></div></a>`).join("");
 
 function renderPackages(f = "all") {
   $("#pkgGrid").innerHTML = PACKAGES.filter(p => f === "all" || p.cat === f).map(p => `

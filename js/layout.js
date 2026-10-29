@@ -10,7 +10,7 @@
   <header class="site-header" id="top">
     <div class="topbar"><div class="wrap">
       <span>Call or WhatsApp: ${S.hours}</span>
-      <a href="tel:${S.phoneTel}">&#9742; ${S.phoneDisplay}</a>
+      <span><a href="tel:${S.phoneTel}">&#9742; ${S.phoneDisplay}</a> &nbsp;|&nbsp; <a href="tel:${S.phone2Tel}">${S.phone2Display}</a></span>
     </div></div>
     <nav class="wrap nav">
       <a class="brand" href="index.html" aria-label="${S.name}"><img src="assets/logo.jpeg" alt="${S.name} logo"></a>
@@ -36,6 +36,7 @@
         <a href="index.html#gallery">Gallery</a><a href="contact.html">Contact</a></div>
       <div><h4>Contact</h4>
         <a href="tel:${S.phoneTel}">${S.phoneDisplay}</a>
+        <a href="tel:${S.phone2Tel}">${S.phone2Display}</a>
         <a href="${wa}" target="_blank" rel="noopener">WhatsApp us</a>
         <span class="hours">&#128339; ${S.hours}</span><span>Please call or chat on WhatsApp during business hours.</span><span>${S.address}</span></div>
     </div>
