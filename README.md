@@ -41,3 +41,15 @@ custom code. Host free on GitHub Pages and point your GoDaddy domain to it:
 (Alternatives: Netlify or Cloudflare Pages, both free, with the same DNS idea.)
 
 Updating the site later: edit, then `git add . && git commit -m "update" && git push`.
+
+## Change log (commit history)
+
+| Commit | Summary | What changed on the website |
+|---|---|---|
+| `0aeee85` | Site-wide refresh | Updated look and layout across all pages, refreshed header/footer, contact details and contact page, improved photos, and polished the tour package pages. |
+| `b14557f` | Tour package improvements | Improved the tour package detail pages: better package information and how packages are shown on the site. |
+| `abb92b5` | Fixed photos + new package pages | Fixed broken/missing Kerala photos on the home page, and added new tour package detail pages so visitors can view each package in full. |
+| `d219790` | Website launch | First version of the Lovedale Holidays site: home page, contact page, logo, call/WhatsApp buttons, and the lovedale.co.in domain setup. |
+
+For future updates, add a new row at the top, and use a clear commit message,
+for example `git commit -m "Add Munnar package"`.
