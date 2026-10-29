@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Experience | Lovedale Holidays</title>
+<link rel="icon" href="assets/logo.jpeg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section class="dhero" id="dHero"></section>
+<section class="section wrap dbody">
+  <div class="dmain">
+    <h2 class="title left">About <span class="red" id="dName"></span></h2>
+    <div id="dSummary"></div>
+    <h3 class="dh3">What you will experience</h3>
+    <ul id="dHigh" class="dhigh"></ul>
+  </div>
+  <aside class="card dfacts" id="dFacts"></aside>
+</section>
+<section class="section dark">
+  <div class="wrap">
+    <h2 class="title">Photos of <span class="yellow" id="dName2"></span></h2>
+    <div id="dGal" class="gallery dgal"></div>
+  </div>
+</section>
+<section class="section wrap">
+  <h2 class="title">More <span class="red">signature experiences</span></h2>
+  <div id="dOther" class="dother"></div>
+</section>
+<div id="lightbox" class="lightbox">
+  <button id="lbClose" aria-label="Close">&times;</button>
+  <button id="lbPrev" aria-label="Previous">&#8249;</button>
+  <figure><img alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button id="lbNext" aria-label="Next">&#8250;</button>
+</div>
+<script src="js/site-config.js"></script>
+<script src="js/images.js"></script>
+<script src="js/experiences.js"></script>
+<script src="js/layout.js"></script>
+<script>
+(function(){
+  const $=s=>document.querySelector(s), S=window.SITE, all=window.EXP_INFO;
+  const id=new URLSearchParams(location.search).get("id"); const d=all[id]||all.kathakali; const key=all[id]?id:"kathakali";
+  document.title=d.name+" | Lovedale Holidays";
+  const wa=`https://wa.me/${S.whatsapp}?text=${encodeURIComponent("Hi, I am interested in the "+d.name+" experience"+". Please share details.")}`;
+  $("#dHero").innerHTML=`${imgTag(d.photos[0])}<div class="hero-shade"></div><div class="wrap hero-copy"><p class="eyebrow"><a href="index.html#experiences">&larr; All experiences</a></p><h1>${d.name}</h1><p class="lead">${d.tag}</p><div class="cta"><a class="btn" target="_blank" rel="noopener" href="${wa}">Book this experience</a><a class="btn btn-ghost" href="#dGal">See photos</a></div></div>`;
+  $("#dName").textContent=d.name; $("#dName2").textContent=d.name;
+  $("#dSummary").innerHTML=d.summary.map(p=>`<p class="dp">${p}</p>`).join("");
+  $("#dHigh").innerHTML=d.highlights.map(h=>`<li>${h}</li>`).join("");
+  $("#dFacts").innerHTML=`<h3>Quick facts</h3><dl>${Object.entries(d.facts).map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl><a class="btn" target="_blank" rel="noopener" href="${wa}">Enquire on WhatsApp</a><a class="btn btn-details" href="tel:${S.phoneTel}">Call ${S.phoneDisplay}</a>`;
+  const G=d.photos;
+  $("#dGal").innerHTML=G.map(s=>`<button class="gi" data-slug="${s}">${imgTag(s)}<span class="gcap">${IMAGES[s].alt}</span></button>`).join("");
+  $("#dOther").innerHTML=Object.entries(all).filter(([k])=>k!==key).map(([k,o])=>`<a class="dmini" href="experience.html?id=${k}">${imgTag(o.photos[0])}<span>${o.name}</span></a>`).join("");
+  wireImages();
+  const lb=$("#lightbox"); let i=0;
+  function open(n){ i=(n+G.length)%G.length; const im=IMAGES[G[i]], el=lb.querySelector("img");
+    el.src=`assets/images/${G[i]}.jpg`;
+    $("#lbCap").textContent=im.alt; lb.classList.add("open"); }
+  $("#dGal").addEventListener("click",e=>{const b=e.target.closest(".gi"); if(b) open(G.indexOf(b.dataset.slug));});
+  $("#lbNext").onclick=()=>open(i+1); $("#lbPrev").onclick=()=>open(i-1); $("#lbClose").onclick=()=>lb.classList.remove("open");
+  lb.addEventListener("click",e=>{if(e.target===lb) lb.classList.remove("open");});
+  addEventListener("keydown",e=>{ if(!lb.classList.contains("open")) return; if(e.key==="Escape") lb.classList.remove("open"); if(e.key==="ArrowRight") open(i+1); if(e.key==="ArrowLeft") open(i-1); });
+})();
+</script>
+</body>
+</html>

@@ -3,6 +3,18 @@
    The Wikimedia URLs below are used only by download_images.sh to fetch the photos. */
 const C = "https://commons.wikimedia.org/wiki/Special:FilePath/";
 window.IMAGES = {
+  e_kathakali2: { alt: "Kathakali artist applying traditional makeup", url: C + "Kathakali_makeup.jpg?width=900" },
+  e_kathakali3: { alt: "Kathakali performance on stage", url: C + "Kathakali_performance.jpg?width=900" },
+  e_ayurveda2: { alt: "Ayurvedic oil treatment (Shirodhara)", url: C + "Shirodhara.jpg?width=900" },
+  e_ayurveda3: { alt: "Ayurvedic herbs and oils", url: C + "Ayurvedic_herbs.jpg?width=900" },
+  e_spices2: { alt: "Black pepper on the vine", url: C + "Black_pepper_plant.jpg?width=900" },
+  e_spices3: { alt: "Spice market in Mattancherry, Kochi", url: C + "Spice_market_Kochi.jpg?width=900" },
+  e_sadya2: { alt: "Traditional sadya served on a banana leaf", url: C + "Kerala_Sadya.jpg?width=900" },
+  e_sadya3: { alt: "Payasam, the Kerala sweet dessert", url: C + "Payasam.jpg?width=900" },
+  e_vallam2: { alt: "Snake boat (chundan vallam) racing crew", url: C + "Snake_boat_race.jpg?width=900" },
+  e_vallam3: { alt: "Crowds at the Nehru Trophy boat race", url: C + "Nehru_Trophy_Boat_Race.jpg?width=900" },
+  e_pooram2: { alt: "Kudamattom umbrella display at Thrissur Pooram", url: C + "Kudamattom.jpg?width=900" },
+  e_pooram3: { alt: "Fireworks at Thrissur Pooram", url: C + "Thrissur_Pooram_fireworks.jpg?width=900" },
   h_vembanad: { alt: "Sunset over Vembanad lake, Alappuzha", url: C + "VembanadAlappuzha.jpg?width=1920" },
   h_munnar_tea: { alt: "Tea plantations of Munnar", url: C + "Tea_plantation_in_Munnar.jpg?width=1920" },
   h_kochi_nets: { alt: "Chinese fishing nets, Fort Kochi", url: C + "Kochi,_Chinese_fishing_nets,_Kerala,_India.jpg?width=1920" },

@@ -60,7 +60,7 @@ $("#filters").addEventListener("click", e => {
 });
 renderPackages();
 
-$("#expGrid").innerHTML = EXPERIENCES.map(([s,t,d])=>`<div class="exp reveal">${imgTag(s)}<div class="cap"><h3>${t}</h3><p>${d}</p></div></div>`).join("");
+$("#expGrid").innerHTML = EXPERIENCES.map(([s,t,d])=>`<a class="exp reveal" href="experience.html?id=${s}" aria-label="Explore ${t}">${imgTag(s)}<div class="cap"><h3>${t}</h3><p>${d}</p><span class="more">Explore &rarr;</span></div></a>`).join("");
 $("#galleryGrid").innerHTML = GALLERY.map(s=>`<button class="gi" data-slug="${s}">${imgTag(s)}</button>`).join("");
 $("#reviews").innerHTML = REVIEWS.map(([n,c,t])=>`<blockquote class="reveal"><p>“${t}”</p><footer>${n} · ${c}</footer></blockquote>`).join("");
 wireImages();
