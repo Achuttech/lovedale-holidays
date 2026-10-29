@@ -55,7 +55,7 @@
   wireImages();
   const lb=$("#lightbox"); let i=0;
   function open(n){ i=(n+G.length)%G.length; const im=IMAGES[G[i]], el=lb.querySelector("img");
-    el.src=`assets/images/${G[i]}.jpg`; el.onerror=()=>{el.onerror=null; el.src=im.url.replace(/width=\d+/,"width=1600");};
+    el.src=`assets/images/${G[i]}.jpg`;
     $("#lbCap").textContent=im.alt; lb.classList.add("open"); }
   $("#dGal").addEventListener("click",e=>{const b=e.target.closest(".gi"); if(b) open(G.indexOf(b.dataset.slug));});
   $("#lbNext").onclick=()=>open(i+1); $("#lbPrev").onclick=()=>open(i-1); $("#lbClose").onclick=()=>lb.classList.remove("open");

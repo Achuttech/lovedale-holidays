@@ -1,7 +1,6 @@
-/* Image library. Loading order for each image:
-   1) your own file  assets/images/<slug>.jpg   (best: drop your photos here)
-   2) the Wikimedia Commons photo below (free-licence, verified file names)
-   3) a branded gradient placeholder if both fail */
+/* Image library. Every image loads ONLY from assets/images/<slug>.jpg.
+   If the file is missing, a branded placeholder is shown.
+   The Wikimedia URLs below are used only by download_images.sh to fetch the photos. */
 const C = "https://commons.wikimedia.org/wiki/Special:FilePath/";
 window.IMAGES = {
   h_vembanad: { alt: "Sunset over Vembanad lake, Alappuzha", url: C + "VembanadAlappuzha.jpg?width=1920" },
@@ -87,16 +86,15 @@ window.IMAGES = {
 
 window.imgTag = function (slug, cls = "") {
   const i = window.IMAGES[slug];
-  return `<img class="${cls}" loading="lazy" alt="${i.alt}" data-slug="${slug}" data-remote="${i.url}" src="assets/images/${slug}.jpg">`;
+  return `<img class="${cls}" loading="lazy" alt="${i.alt}" data-slug="${slug}" src="assets/images/${slug}.jpg">`;
 };
 window.wireImages = function (root = document) {
   root.querySelectorAll("img[data-slug]").forEach(img => {
     if (img.dataset.wired) return; img.dataset.wired = 1;
-    let step = 0;
+    let done = false;
     const fail = () => {
-      step++;
-      if (step === 1) img.src = img.dataset.remote;
-      else if (step === 2) { img.removeAttribute("src"); img.classList.add("img-fallback"); img.parentElement.classList.add("no-img"); img.parentElement.dataset.label = img.alt; }
+      if (done) return; done = true;
+      img.removeAttribute("src"); img.classList.add("img-fallback"); img.parentElement.classList.add("no-img"); img.parentElement.dataset.label = img.alt;
     };
     img.addEventListener("error", fail);
     if (img.complete && img.naturalWidth === 0) fail();

@@ -75,7 +75,7 @@ wireImages();
 const lb = $("#lightbox");
 let lbIndex = 0;
 function openLb(i) { lbIndex = (i + GALLERY.length) % GALLERY.length; const im = IMAGES[GALLERY[lbIndex]];
-  const el = $("img", lb); el.src = `assets/images/${GALLERY[lbIndex]}.jpg`; el.onerror = () => { el.onerror = null; el.src = im.url.replace(/width=\d+/, "width=1600"); };
+  const el = $("img", lb); el.src = `assets/images/${GALLERY[lbIndex]}.jpg`;
   $("#lbCap").textContent = im.alt; lb.classList.add("open"); }
 $("#galleryGrid").addEventListener("click", e => { const b = e.target.closest(".gi"); if (b) openLb(GALLERY.indexOf(b.dataset.slug)); });
 $("#lbNext").onclick = () => openLb(lbIndex + 1); $("#lbPrev").onclick = () => openLb(lbIndex - 1);
