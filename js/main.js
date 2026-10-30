@@ -28,7 +28,9 @@ const EXPERIENCES = [
 const REVIEWS = [
   ["Anita & Rohit", "Mumbai", "Our houseboat night was the highlight. Everything was arranged smoothly."],
   ["The Menon Family", "Bengaluru", "Great drivers, lovely hotels in Munnar and Thekkady. Kids loved it."],
-  ["Sarah K.", "London", "Friendly, quick on WhatsApp and flexible with changes. Highly recommend."]
+  ["Sarah K.", "London", "Friendly, quick on WhatsApp and flexible with changes. Highly recommend."],
+  ["Priya & Arjun", "Chennai", "Our honeymoon in Munnar and Alleppey was perfect. Beautiful hotels, a surprise candlelight dinner on the houseboat and a driver who felt like family."],
+  ["David & Emma", "Melbourne", "A wonderful two-week Kerala tour. The Kathakali show, spice plantation walk and Varkala beach were unforgettable. Every detail was taken care of."]
 ];
 
 /* ---------- Render ---------- */

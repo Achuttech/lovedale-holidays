@@ -33,7 +33,7 @@
         <p>Handcrafted Kerala holidays - backwaters, tea hills, beaches, wildlife and culture.</p></div>
       <div><h4>Explore</h4>
         <a href="index.html#packages">Tour packages</a><a href="index.html#destinations">Destinations</a>
-        <a href="index.html#gallery">Gallery</a><a href="contact.html">Contact</a></div>
+        <a href="index.html#gallery">Gallery</a><a href="contact.html">Contact</a><a href="terms.html">Terms &amp; Conditions</a></div>
       <div><h4>Contact</h4>
         <a href="tel:${S.phoneTel}">${S.phoneDisplay}</a>
         <a href="tel:${S.phone2Tel}">${S.phone2Display}</a>
