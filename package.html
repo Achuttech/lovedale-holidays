@@ -48,7 +48,7 @@
   pMeta.textContent = `${p.days ? `${p.days} Nights / ${p.days+1} Days` : "Day trip"} \u00b7 ${p.route}`;
   pIntro.textContent = p.intro;
   pPrice.textContent = inr(p.price); document.getElementById("pWas").textContent = inr(Math.round(p.price/0.8));
-  pPlan.innerHTML = p.plan.map(([t,d],i)=>`<li><span class="day">Day ${i+1}</span><h3>${t}</h3><p>${d}</p></li>`).join("");
+  pPlan.innerHTML = p.plan.map(([t,d],i)=>`<li><span class="day">Day ${i+1}</span><h3>${t.replace(/^Day \d+:\s*/,"")}</h3><p>${d}</p></li>`).join("");
   pInc.innerHTML = p.inc.concat(p.days ? ["Hotel accommodation","All transfers & sightseeing by private car","Driver allowance, tolls & parking"] : []).map(x=>`<li>${x}</li>`).join("");
   pExc.innerHTML = p.exc.map(x=>`<li>${x}</li>`).join("");
   pWa.href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi, I would like to book the "${p.title}" package (${p.days ? p.days+"N/"+(p.days+1)+"D" : "day trip"}). Please share availability and price.`)}`;

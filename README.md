@@ -46,6 +46,7 @@ Updating the site later: edit, then `git add . && git commit -m "update" && git 
 
 | Commit | Summary | What changed on the website |
 |---|---|---|
+| _next_ | Munnar & Thekkady packages | Munnar Hill Retreat is now a shorter 2 nights / 3 days trip. The Thekkady package now includes Munnar too: "Munnar & Thekkady Hills, Wildlife & Spice", 4 nights / 5 days (Kochi - Munnar - Thekkady - Kochi). Both packages have a new, more detailed day-by-day itinerary with drive times, sights and overnight stops. |
 | _next_ | 20% offer + vehicle terms | Every tour package now shows a 20% OFF badge: the package price stays the same, with a higher original price shown crossed out above it, and "Minimum 2 persons". Terms & Conditions now list what the vehicle package includes and excludes, the free spice plantation ticket, and the driver and vehicle rules. |
 | _next_ | Customise your trip + instant quote | New "Get a Quote" page: visitors choose a package or build their own trip (dates, travellers, hotel level, vehicle, houseboat, experiences) and see a live price estimate, then send it to us on WhatsApp. Optionally saves every quote to a Google Sheet and emails the customer a PDF quote. |
 | _next_ | Traveller stories + Terms & Conditions page | Added 2 more traveller stories on the home page (5 in total). Added a new Terms & Conditions page (bookings, payments, cancellations, refunds, inclusions, hotels, vehicles, insurance, responsibility), linked from the footer on every page. |
