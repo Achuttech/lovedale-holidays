@@ -23,7 +23,7 @@
     <ol class="timeline" id="pPlan"></ol>
   </div>
   <aside class="card pkg-side">
-    <p class="price"><small>from</small> <strong id="pPrice"></strong> <small>/person</small></p>
+    <p class="price"><span class="badge offer">20% OFF</span> <small>from</small> <s class="was" id="pWas"></s> <strong id="pPrice"></strong> <small>/person</small><br><small class="minpax">Minimum 2 persons required</small></p>
     <h3>Included</h3><ul class="tick" id="pInc"></ul>
     <h3>Not included</h3><ul class="cross" id="pExc"></ul>
     <a class="btn" id="pWa" target="_blank" rel="noopener" href="#">Book on WhatsApp</a>
@@ -47,11 +47,12 @@
   pTitle.textContent = p.title;
   pMeta.textContent = `${p.days ? `${p.days} Nights / ${p.days+1} Days` : "Day trip"} \u00b7 ${p.route}`;
   pIntro.textContent = p.intro;
-  pPrice.textContent = inr(p.price);
+  pPrice.textContent = inr(p.price); document.getElementById("pWas").textContent = inr(Math.round(p.price/0.8));
   pPlan.innerHTML = p.plan.map(([t,d],i)=>`<li><span class="day">Day ${i+1}</span><h3>${t}</h3><p>${d}</p></li>`).join("");
   pInc.innerHTML = p.inc.concat(p.days ? ["Hotel accommodation","All transfers & sightseeing by private car","Driver allowance, tolls & parking"] : []).map(x=>`<li>${x}</li>`).join("");
   pExc.innerHTML = p.exc.map(x=>`<li>${x}</li>`).join("");
   pWa.href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi, I would like to book the "${p.title}" package (${p.days ? p.days+"N/"+(p.days+1)+"D" : "day trip"}). Please share availability and price.`)}`;
+  pWa.insertAdjacentHTML("afterend", ` <a class="btn btn-details" href="customise.html?package=${p.id}">Customise &amp; get instant price</a>`);
 })();
 </script>
 </body>

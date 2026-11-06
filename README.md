@@ -46,6 +46,8 @@ Updating the site later: edit, then `git add . && git commit -m "update" && git 
 
 | Commit | Summary | What changed on the website |
 |---|---|---|
+| _next_ | 20% offer + vehicle terms | Every tour package now shows a 20% OFF badge: the package price stays the same, with a higher original price shown crossed out above it, and "Minimum 2 persons". Terms & Conditions now list what the vehicle package includes and excludes, the free spice plantation ticket, and the driver and vehicle rules. |
+| _next_ | Customise your trip + instant quote | New "Get a Quote" page: visitors choose a package or build their own trip (dates, travellers, hotel level, vehicle, houseboat, experiences) and see a live price estimate, then send it to us on WhatsApp. Optionally saves every quote to a Google Sheet and emails the customer a PDF quote. |
 | _next_ | Traveller stories + Terms & Conditions page | Added 2 more traveller stories on the home page (5 in total). Added a new Terms & Conditions page (bookings, payments, cancellations, refunds, inclusions, hotels, vehicles, insurance, responsibility), linked from the footer on every page. |
 | _next_ | New HD photos | Added 16 new HD photos. The home page slideshow now opens with backwaters, Munnar, Kovalam, Alleppey and other new photos; the gallery now starts with houseboat, destination, food and hotel photos; destination and experience cards also show the new photos. |
 | _next_ | Signature Experience pages | All 6 Signature Experiences are now clickable, each with its own page: banner photo, 5 detailed paragraphs, highlights, quick facts, a photo gallery and a WhatsApp booking button. |
@@ -60,3 +62,16 @@ Updating the site later: edit, then `git add . && git commit -m "update" && git 
 Rows marked _next_ are not yet committed; replace with the commit ID after pushing.
 For future updates, add a new row at the top, and use a clear commit message,
 for example `git commit -m "Add Munnar package"`.
+
+## Quote automation setup (Get a Quote page)
+
+**Prices:** edit `js/pricing.js` (hotel, vehicle, houseboat, experiences, airport, peak season %, margin %, GST %). Prices there are placeholders.
+
+**Save leads + email PDF quotes (optional, free):**
+1. Create a new Google Sheet (e.g. "Lovedale Quotes").
+2. Extensions -> Apps Script. Delete the sample code and paste all of `automation/quote-apps-script.gs`.
+3. Set `OWNER_EMAIL` at the top to your email. Save.
+4. Deploy -> New deployment -> type **Web app** -> Execute as: **Me** -> Who has access: **Anyone** -> Deploy. Approve the permissions.
+5. Copy the Web app URL and paste it into `scriptUrl: ""` in `js/pricing.js`. Commit and push.
+6. Test: fill the form on the Get a Quote page with your own email. A "Quotes" tab appears in the Sheet, and you and the customer get the PDF.
+After editing the script later, use Deploy -> Manage deployments -> Edit -> New version (the URL stays the same).

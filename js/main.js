@@ -45,10 +45,10 @@ $("#destGrid").innerHTML = DESTINATIONS.map(([s,n,d],i)=>`
 function renderPackages(f = "all") {
   $("#pkgGrid").innerHTML = PACKAGES.filter(p => f === "all" || p.cat === f).map(p => `
   <article class="pkg">
-    <div class="pimg">${imgTag(p.img)}<span class="badge">${p.days ? `${p.days}N / ${p.days+1}D` : "Day trip"}</span></div>
+    <div class="pimg">${imgTag(p.img)}<span class="badge">${p.days ? `${p.days}N / ${p.days+1}D` : "Day trip"}</span><span class="badge offer">20% OFF</span></div>
     <div class="pbody"><h3>${p.title}</h3><p class="route">${p.route}</p>
       <ul>${p.inc.map(x=>`<li>${x}</li>`).join("")}</ul>
-      <div class="pfoot"><div><small>from</small><strong>${inr(p.price)}</strong><small> /person</small></div>
+      <div class="pfoot"><div><small>from</small> <s class="was">${inr(Math.round(p.price/0.8))}</s> <strong>${inr(p.price)}</strong><small> /person</small><small class="minpax">Minimum 2 persons</small></div>
         <a class="btn btn-sm" target="_blank" rel="noopener" href="${waLink(`Hi, I am interested in the "${p.title}" package. Please share details.`)}">Enquire</a></div>
       <a class="btn btn-details" href="package.html?id=${p.id}">View Details &amp; Tour Plan &rarr;</a></div>
   </article>`).join("");

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Customise Your Trip | Lovedale Holidays</title>
+<link rel="icon" href="assets/logo.jpeg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inner">
+<section class="page-head"><div class="wrap"><h1>Customise <span class="red">Your Trip</span></h1><p>Choose your options and see an instant estimate. Send it to us and we will confirm availability and your final price.</p></div></section>
+<section class="section wrap quote-grid">
+<form class="card" id="qForm">
+  <h3>1. Your trip</h3>
+  <label>Start from a package<select name="pkg" id="qPkg"><option value="">Build my own trip</option></select></label>
+  <div class="row2"><label>Start date<input type="date" name="date" required></label><label>Nights<input type="number" name="nights" min="1" max="30" value="4" required></label></div>
+  <div class="row2"><label>Adults<input type="number" name="adults" min="2" max="30" value="2" required></label><label>Children (5-11)<input type="number" name="children" min="0" max="20" value="0"></label></div>
+  <h3>2. Stay &amp; travel</h3>
+  <div class="row2"><label>Hotel level<select name="hotel"><option value="budget">Budget</option><option value="standard" selected>Standard (3*)</option><option value="premium">Premium (4*)</option><option value="luxury">Luxury (5*)</option></select></label>
+  <label>Vehicle<select name="car"><option value="sedan">Sedan (up to 3)</option><option value="suv">SUV (up to 6)</option><option value="tempo">Tempo Traveller (up to 12)</option></select></label></div>
+  <div class="row2"><label>Houseboat nights<input type="number" name="hbNights" min="0" max="5" value="1"></label>
+  <label>Houseboat type<select name="hbType"><option value="standard">Standard</option><option value="premium" selected>Premium</option><option value="luxury">Luxury</option></select></label></div>
+  <label class="chk"><input type="checkbox" name="airport" checked> Airport pickup &amp; drop (Kochi)</label>
+  <h3>3. Experiences</h3><div id="qExtras" class="qextras"></div>
+  <h3>4. Your details</h3>
+  <label>Name<input name="name" required></label>
+  <div class="row2"><label>Phone / WhatsApp<input name="phone" type="tel" required></label><label>Email (for PDF quote)<input name="email" type="email"></label></div>
+  <label>Notes<textarea name="notes" rows="3" placeholder="Places you want to visit, special occasions, food preferences..."></textarea></label>
+</form>
+<aside class="card qsum" id="qSum"></aside>
+</section>
+<script src="js/site-config.js"></script>
+<script src="js/images.js"></script>
+<script src="js/packages.js"></script>
+<script src="js/pricing.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/quote.js"></script>
+</body>
+</html>
